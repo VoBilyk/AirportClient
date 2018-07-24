@@ -5,16 +5,18 @@
 <table class="table table-striped">
   <thead>
       <tr>
+          <th>№</th>
           <th>Id</th>
           <th>FirstName</th>
           <th>LastName</th>
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let pilot of pilots">
-          <td>{{Id}}</td>
-          <td>{{FirstName}}</td>
-          <td>{{LastName}}</td>
+      <tr *ngFor="let pilot of pilots; let i = index">
+          <td>{{i+1}}</td>         
+          <td>{{pilot.id}}</td>
+          <td>{{pilot.firstname}}</td>
+          <td>{{pilot.lastname}}</td>
       </tr>
   </tbody>
 </table>

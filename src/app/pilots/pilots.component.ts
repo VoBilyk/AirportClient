@@ -10,10 +10,13 @@ import { PilotService } from './shared/pilot.service';
   providers: [PilotService]
 })
 export class PilotsComponent implements OnInit {
+  
+  pilots: Pilot[] = [];
 
   constructor(private pilotService: PilotService) { }
 
   ngOnInit() {
+    this.pilots = this.pilotService.get();
   }
 
 }

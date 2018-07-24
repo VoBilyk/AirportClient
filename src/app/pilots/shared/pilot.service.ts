@@ -6,13 +6,14 @@ import { Pilot } from './pilot.model';
 })
 export class PilotService {
 
+  private pilots : Pilot[] = [
+    { id: '15', firstname:'Volodya', lastname: 'Bilyk'},
+    { id: '17', firstname:'Igor', lastname: 'Karpyn'},
+    { id: '16', firstname:'Petro', lastname: 'Krenz'}
+];
   constructor() { }
 
-  get(){
-    return Pilot[3] = [
-      { id: '15', firstname:'Volodya', lastname: 'Bilyk'},
-      { id: '17', firstname:'Igor', lastname: 'Karpyn'},
-      { id: '16', firstname:'Petro', lastname: 'Krenz'}
-  ];
+  get() : Pilot[] {
+    return this.pilots;
   }
 }
