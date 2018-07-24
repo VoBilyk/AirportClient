@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 import { Pilot } from './pilot.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
+
+@Injectable()
 export class PilotService {
 
-  private pilots : Pilot[] = [
-    { id: '15', firstname:'Volodya', lastname: 'Bilyk'},
-    { id: '17', firstname:'Igor', lastname: 'Karpyn'},
-    { id: '16', firstname:'Petro', lastname: 'Krenz'}
-];
-  constructor() { }
+  url = 'http://localhost:57338/api/pilots/';
 
-  get() : Pilot[] {
-    return this.pilots;
+  constructor(private http: HttpClient) { }
+
+  getAll (): Observable<Pilot[]> {
+    return this.http.get<Pilot[]>(this.url);
   }
 }

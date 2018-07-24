@@ -1,5 +1,8 @@
 export class Pilot {
     id: string;
-    firstname: string;
-    lastname: string
+    firstName: string;
+    lastName: string;
+    experience: string;
+    birthDate: string;
+    crewsID: string[]
   }

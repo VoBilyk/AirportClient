@@ -1,22 +1,22 @@
-<p>
-  pilots works!
-</p>
-
-<table class="table table-striped">
-  <thead>
-      <tr>
-          <th>№</th>
-          <th>Id</th>
-          <th>FirstName</th>
-          <th>LastName</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let pilot of pilots; let i = index">
-          <td>{{i+1}}</td>         
-          <td>{{pilot.id}}</td>
-          <td>{{pilot.firstname}}</td>
-          <td>{{pilot.lastname}}</td>
-      </tr>
-  </tbody>
-</table>
+<div class="table-responsive table-center">
+	<table class="table table-hover">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>FirstName</th>
+				<th>LastName</th>
+				<th style="width: auto">Experience(years)</th>
+				<th>BithDate</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let pilot of pilots | async; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{pilot.firstName}}</td>
+				<td>{{pilot.lastName}}</td>
+				<td>{{pilot.experience}}</td>
+				<td>{{pilot.birthDate | date:'mediumDate'}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
