@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+
+import { StewardessesModule } from './stewardesses/stewardesses.module';
 import { PilotsComponent } from './pilots/pilots.component';
 
 @NgModule({
@@ -14,7 +16,8 @@ import { PilotsComponent } from './pilots/pilots.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StewardessesModule
   ],
   providers: [],
   bootstrap: [PilotsComponent]
