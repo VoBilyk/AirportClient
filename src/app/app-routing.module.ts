@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { StewardessDetailComponent } from './stewardesses/stewardess-detail/stewardess-detail.component';
 import { StewardessListComponent } from './stewardesses/stewardess-list/stewardess-list.component';
-
 import { PilotListComponent } from './pilots/pilot-list/pilot-list.component';
 import { PilotDetailComponent } from './pilots/pilot-detail/pilot-detail.component';
 import { AeroplaneDetailComponent } from './aeroplanes/aeroplane-detail/aeroplane-detail.component';
@@ -20,10 +20,28 @@ import { TicketDetailComponent } from './tickets/ticket-detail/ticket-detail.com
 
 const routes: Routes = [
   { path: 'stewardesses', component: StewardessListComponent },
+  { path: 'stewardesses/:id', component: StewardessDetailComponent },
   
   { path: 'pilots', component: PilotListComponent },
-  { path: 'pilot-detail/:id', component: PilotDetailComponent },
+  { path: 'pilots/:id', component: PilotDetailComponent },
 
+  { path: 'aeroplanes', component: AeroplaneListComponent },
+  { path: 'aeroplanes/:id', component: AeroplaneDetailComponent },
+
+  { path: 'aeropanetype', component: AeroplaneTypeListComponent },
+  { path: 'aeroplanetype/:id', component: AeroplaneTypeDetailComponent },
+
+  { path: 'crews', component: CrewListComponent },
+  { path: 'crews/:id', component: CrewDetailComponent },
+
+  { path: 'departures', component: DepartureListComponent },
+  { path: 'departures/:id', component: DepartureDetailComponent },
+
+  { path: 'flights', component: FlightListComponent },
+  { path: 'flights/:id', component: FlightDetailComponent },
+
+  { path: 'tickets', component: TicketListComponent },
+  { path: 'tickets/:id', component: TicketDetailComponent },
 ];
 
 @NgModule({
