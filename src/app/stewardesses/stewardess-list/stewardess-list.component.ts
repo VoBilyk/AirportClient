@@ -32,6 +32,6 @@ export class StewardessListComponent implements OnInit {
   }
 
   goToDetail(id: string) {
-    this.router.navigate(['/stewardess', id]);
+    this.router.navigate(['/stewardesses', id]);
   }
 }
