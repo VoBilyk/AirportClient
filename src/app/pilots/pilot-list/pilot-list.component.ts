@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { Pilot } from '../shared/pilot.model'
 import { PilotService } from '../shared/pilot.service';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,11 +15,16 @@ import { Observable } from 'rxjs';
 export class PilotListComponent implements OnInit {
 
   public pilots: Observable<Pilot[]>;
+  public pilot: Pilot;
 
   constructor(private router: Router, private pilotService: PilotService) { }
 
   ngOnInit() {
     this.pilots = this.pilotService.getAll();
+  }
+
+  create() {
+    this.pilotService.create(this.pilot);
   }
 
   delete(id: string) {

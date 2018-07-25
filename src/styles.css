@@ -12,7 +12,7 @@
 
 .btn-box {
 	display: grid;
-	grid-template-columns: 70px 70px 70px;
+	grid-template-columns: 70px 70px;
 	grid-gap: 5px;
 }
 

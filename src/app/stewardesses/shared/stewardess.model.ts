@@ -3,5 +3,5 @@ export class Stewardess {
     firstName: string;
     lastName: string;
     birthDate: string;
-    crewID: string
+    crewId: string
   }

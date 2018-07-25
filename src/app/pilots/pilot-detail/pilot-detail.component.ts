@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 import { Pilot } from '../shared/pilot.model';
 import { PilotService } from '../shared/pilot.service';
@@ -24,12 +23,10 @@ export class PilotDetailComponent implements OnInit {
   }
 
   update(id: string){
-    debugger;
     this.pilotService.update(id, this.pilot);
   }
 
   delete(id: string) {
-    debugger;
     this.pilotService.delete(id);
   }
 }
