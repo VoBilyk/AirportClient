@@ -30,7 +30,7 @@ export class AeroplaneListComponent implements OnInit {
   }
 
   goToDetail(id: string) {
-    this.router.navigate(['/pilots', id]);
+    this.router.navigate(['/aeroplanes', id]);
   }
 
 }

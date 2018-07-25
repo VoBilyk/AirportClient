@@ -1,3 +1,24 @@
-<p>
-  crew-list works!
-</p>
+<div class="table-responsive">
+    <table class="table table-hover table-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>№</th>
+          <th>PilotId</th>
+          <th>Stewardesses</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crew of crews | async; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{crew.pilotId}}</td>    
+          <td>{{crew.stewardesses.length}}</td>
+          <td class="btn-box">
+            <button class="btn btn-sm" (click)="goToDetail(crew.id)">Details</button>
+            <button class="btn btn-sm" (click)="delete(crew.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

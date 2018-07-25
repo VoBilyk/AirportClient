@@ -28,5 +28,4 @@ export class TicketDetailComponent implements OnInit {
   delete(id: string) {
     this.ticketService.delete(id);
   }
-
 }

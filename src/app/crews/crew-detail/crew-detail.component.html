@@ -1,3 +1,21 @@
-<p>
-  crew-detail works!
-</p>
+<div class="table-detail-center">
+    <div class="form-group">
+      <label>Id</label>
+      <div class="form-control">{{crew.id}}</div>
+    </div>
+    <div class="form-group">
+      <label>PilotId</label>
+      <input class="form-control" [(ngModel)]="crew.pilotId" />
+    </div>
+    <div class="form-group">
+      <label>Stewardesses</label>
+      <div class="form-control">
+        {{crew.stewardessesId.length}}
+      </div>
+    </div>
+  
+    <div class="btn-box">
+      <button class="btn" (click)="update(crew.id)">Update</button>
+      <button class="btn" (click)="delete(crew.id)">Delete</button>
+    </div>
+  </div>

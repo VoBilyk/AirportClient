@@ -32,9 +32,8 @@ export class AeroplaneTypeService {
 
   delete(id: string) {
     this.http.delete(this.url + id).subscribe(
-      (val) => {
-        console.log("DELETE call successful value returned in body",
-          val);
+      () => {
+        console.log("DELETE call successful value returned in body");
       },
       response => {
         console.log("DELETE call in error", response);

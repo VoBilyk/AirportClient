@@ -28,14 +28,14 @@ const routes: Routes = [
   { path: 'aeroplanes', component: AeroplaneListComponent },
   { path: 'aeroplanes/:id', component: AeroplaneDetailComponent },
 
-  // { path: 'aeropanetype', component: AeroplaneTypeListComponent },
-  // { path: 'aeroplanetype/:id', component: AeroplaneTypeDetailComponent },
+  { path: 'aeroplanetypes', component: AeroplaneTypeListComponent },
+  { path: 'aeroplanetypes/:id', component: AeroplaneTypeDetailComponent },
 
-  // { path: 'crews', component: CrewListComponent },
-  // { path: 'crews/:id', component: CrewDetailComponent },
+  { path: 'crews', component: CrewListComponent },
+  { path: 'crews/:id', component: CrewDetailComponent },
 
-  // { path: 'departures', component: DepartureListComponent },
-  // { path: 'departures/:id', component: DepartureDetailComponent },
+  { path: 'departures', component: DepartureListComponent },
+  { path: 'departures/:id', component: DepartureDetailComponent },
 
   { path: 'flights', component: FlightListComponent },
   { path: 'flights/:id', component: FlightDetailComponent },
