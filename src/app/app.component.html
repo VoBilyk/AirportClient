@@ -1,12 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
 	<h1>
 		Welcome to {{ title }}!
 	</h1>
 </div>
-<h1>Angular Router</h1>
   <nav>
     <a routerLink="/stewardesses" routerLinkActive="active">Stewardesses</a>
     <a routerLink="/pilots" routerLinkActive="active">Pilots</a>
   </nav>
-  <router-outlet></router-outlet>
+  <div class="route-container">
+    <router-outlet></router-outlet>
+  </div>

@@ -4,5 +4,5 @@ export class Pilot {
     lastName: string;
     experience: string;
     birthDate: string;
-    crewsID: string[]
+    crewsId: string[]
   }

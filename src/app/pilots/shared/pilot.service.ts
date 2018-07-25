@@ -4,11 +4,10 @@ import { Observable } from 'rxjs';
 
 import { Pilot } from './pilot.model';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PilotService {
 
   url = 'http://localhost:57338/api/pilots/';
@@ -19,6 +18,18 @@ export class PilotService {
     return this.http.get<Pilot[]>(this.url);
   }
 
+  get (id: string): Observable<Pilot> {
+    return this.http.get<Pilot>(this.url + id);
+  }
+
+  create(pilot: Pilot): Observable<Pilot>{
+    return this.http.post<Pilot>(this.url, pilot); 
+  }
+
+  update(id: string, pilot: Pilot): Observable<Pilot> {
+    return this.http.put<Pilot>(this.url + id, pilot);
+  }
+
   delete(id: string) {
     this.http.delete(this.url + id).subscribe(
       (val) => {
@@ -27,9 +38,6 @@ export class PilotService {
       },
       response => {
         console.log("DELETE call in error", response);
-      },
-      () => {
-        console.log("The DELETE observable is now completed.");
       });
   }
 }

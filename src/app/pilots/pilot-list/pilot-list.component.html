@@ -18,8 +18,8 @@
 				<td class="table-data-center">{{pilot.experience}}</td>
 				<td>{{pilot.birthDate | date:'mediumDate'}}</td>
 				<td class="btn-box">
-					<button class="btn btn-sm">Details</button>
-					<button class="btn btn-sm">Update</button>
+					<button class="btn btn-sm" (click)="goToDetail(pilot.id)">Details</button>
+					<button class="btn btn-sm" >Update</button>
 					<button class="btn btn-sm" (click)="delete(pilot.id)">Delete</button>
 				</td>
 			</tr>
