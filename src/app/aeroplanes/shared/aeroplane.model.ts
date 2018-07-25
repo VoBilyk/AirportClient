@@ -1,4 +1,4 @@
-export class AeroplaneType {
+export class Aeroplane {
     id: string;
     name: string;
     aeroplaneTypeId: string;

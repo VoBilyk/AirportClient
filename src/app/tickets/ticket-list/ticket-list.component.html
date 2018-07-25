@@ -1,3 +1,23 @@
-<p>
-  ticket-list works!
-</p>
+<div class="table-responsive">
+	<table class="table table-hover table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>Price</th>
+				<th>For flightId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let ticket of tickets | async; let i = index">
+				<td>{{i+1}}</td>
+        <td>{{ticket.price}}</td>    
+				<td>{{ticket.flightId}}</td>
+				<td class="btn-box">
+					<button class="btn btn-sm" (click)="goToDetail(ticket.id)">Details</button>
+					<button class="btn btn-sm" (click)="delete(ticket.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,3 +1,29 @@
-<p>
-  aeroplane-detail works!
-</p>
+<div class="table-detail-center">
+    <div class="form-group">
+      <label>Id</label>
+      <div class="form-control">
+        {{aeroplane.id}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Firstname</label>
+      <input class="form-control" [(ngModel)]="aeroplane.name" />
+    </div>
+    <div class="form-group">
+      <label>Lastname</label>
+      <input class="form-control" name="lastName" [(ngModel)]="pilot.lastName" />
+    </div>
+    <div class="form-group">
+      <label>Birthdate</label>
+      <input type="datetime" class="form-control" name="birthdate" [(ngModel)]="pilot.birthDate" />
+    </div>
+    <div class="form-group">
+      <label>Experience</label>
+      <input type="number" class="form-control" name="experience" [(ngModel)]="pilot.experience" />
+    </div>
+  
+    <div class="btn-box">
+      <button class="btn" (click)="update(pilot.id)">Update</button>
+      <button class="btn" (click)="delete(pilot.id)">Delete</button>
+    </div>
+  </div>

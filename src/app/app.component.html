@@ -1,12 +1,20 @@
 <div style="text-align:center">
 	<h1>
-		Welcome to {{ title }}!
+		Airport Dispatcher
 	</h1>
 </div>
+<div class="container"> 
   <nav>
     <a routerLink="/stewardesses" routerLinkActive="active">Stewardesses</a>
     <a routerLink="/pilots" routerLinkActive="active">Pilots</a>
+    <a routerLink="/aeroplanes" routerLinkActive="active">Aeroplanes</a>
+    <a routerLink="/aeroplanetypes" routerLinkActive="active">Aeroplane types</a>
+    <a routerLink="/crews" routerLinkActive="active">Crews</a>
+    <a routerLink="/flights" routerLinkActive="active">Flights</a>
+    <a routerLink="/tickets" routerLinkActive="active">Tickets</a>
+    <a routerLink="/departures" routerLinkActive="active">Departures</a>
   </nav>
   <div class="route-container">
     <router-outlet></router-outlet>
   </div>
+</div>
