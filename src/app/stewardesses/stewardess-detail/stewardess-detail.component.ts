@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Stewardess } from '../shared/stewardess.model';
+import { StewardessService } from '../shared/stewardess.service';
+
 
 @Component({
   selector: 'app-stewardess',
@@ -7,9 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StewardessDetailComponent implements OnInit {
 
-  constructor() { }
+  stewardess: Stewardess = new Stewardess();
+  id: string;
+
+  constructor(private stewardessService: StewardessService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => this.id = params['id']);
+    this.stewardessService.get(this.id).subscribe(data => this.stewardess = data);
+  }
+
+  update(id: string){
+    this.stewardessService.update(id, this.stewardess);
+  }
+
+  delete(id: string) {
+    this.stewardessService.delete(id);
   }
 
 }
