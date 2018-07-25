@@ -32,6 +32,6 @@ export class PilotListComponent implements OnInit {
   }
 
   goToDetail(id: string) {
-    this.router.navigate(['/pilot-detail', id]);
+    this.router.navigate(['/pilots', id]);
   }
 }
