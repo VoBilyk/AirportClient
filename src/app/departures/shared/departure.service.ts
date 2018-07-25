@@ -18,26 +18,19 @@ export class DepartureService {
     return this.http.get<Departure[]>(this.url);
   }
 
-  get (id: string): Observable<Departure> {
+  get(id: string): Observable<Departure> {
     return this.http.get<Departure>(this.url + id);
   }
 
-  create(departure: Departure): Observable<Departure>{
-    return this.http.post<Departure>(this.url, departure); 
+  create(departure: Departure) {
+    this.http.post<Departure>(this.url, departure).subscribe();
   }
 
-  update(id: string, departure: Departure): Observable<Departure> {
-    return this.http.put<Departure>(this.url + id, departure);
+  update(id: string, departure: Departure) {
+    this.http.put<Departure>(this.url + id, departure).subscribe();
   }
 
   delete(id: string) {
-    this.http.delete(this.url + id).subscribe(
-      (val) => {
-        console.log("DELETE call successful value returned in body",
-          val);
-      },
-      response => {
-        console.log("DELETE call in error", response);
-      });
+    this.http.delete(this.url + id).subscribe();
   }
 }

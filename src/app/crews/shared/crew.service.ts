@@ -18,26 +18,19 @@ export class CrewService {
     return this.http.get<Crew[]>(this.url);
   }
 
-  get (id: string): Observable<Crew> {
+  get(id: string): Observable<Crew> {
     return this.http.get<Crew>(this.url + id);
   }
 
-  create(crew: Crew): Observable<Crew>{
-    return this.http.post<Crew>(this.url, crew); 
+  create(crew: Crew) {
+    this.http.post<Crew>(this.url, crew).subscribe();
   }
 
-  update(id: string, crew: Crew): Observable<Crew> {
-    return this.http.put<Crew>(this.url + id, crew);
+  update(id: string, crew: Crew) {
+    this.http.put<Crew>(this.url + id, crew).subscribe();
   }
 
   delete(id: string) {
-    this.http.delete(this.url + id).subscribe(
-      (val) => {
-        console.log("DELETE call successful value returned in body",
-          val);
-      },
-      response => {
-        console.log("DELETE call in error", response);
-      });
+    this.http.delete(this.url + id).subscribe();
   }
 }

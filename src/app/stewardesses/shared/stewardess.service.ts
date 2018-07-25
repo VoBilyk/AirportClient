@@ -14,23 +14,23 @@ export class StewardessService {
 
   constructor(private http: HttpClient) { }
 
-  getAll (): Observable<Stewardess[]> {
+  getAll(): Observable<Stewardess[]> {
     return this.http.get<Stewardess[]>(this.url);
   }
 
-  get (id: string): Observable<Stewardess> {
+  get(id: string): Observable<Stewardess> {
     return this.http.get<Stewardess>(this.url + id);
   }
 
-  create(stewardess: Stewardess): Observable<Stewardess>{
-    return this.http.post<Stewardess>(this.url, stewardess); 
+  create(stewardess: Stewardess) {
+    this.http.post<Stewardess>(this.url, stewardess).subscribe();
   }
 
-  update(id: string, stewardess: Stewardess): Observable<Stewardess> {
-    return this.http.put<Stewardess>(this.url + id, stewardess);
+  update(id: string, stewardess: Stewardess) {
+    this.http.put<Stewardess>(this.url + id, stewardess).subscribe();
   }
 
-  delete(id: string){
-    return this.http.delete(this.url + id);
+  delete(id: string) {
+    this.http.delete(this.url + id).subscribe();
   }
 }

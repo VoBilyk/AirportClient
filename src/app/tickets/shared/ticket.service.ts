@@ -18,26 +18,19 @@ export class TicketService {
     return this.http.get<Ticket[]>(this.url);
   }
 
-  get (id: string): Observable<Ticket> {
+  get(id: string): Observable<Ticket> {
     return this.http.get<Ticket>(this.url + id);
   }
 
-  create(ticket: Ticket): Observable<Ticket>{
-    return this.http.post<Ticket>(this.url, ticket); 
+  create(ticket: Ticket) {
+    this.http.post<Ticket>(this.url, ticket).subscribe();
   }
 
-  update(id: string, ticket: Ticket): Observable<Ticket> {
-    return this.http.put<Ticket>(this.url + id, ticket);
+  update(id: string, ticket: Ticket) {
+    this.http.put<Ticket>(this.url + id, ticket).subscribe();
   }
 
   delete(id: string) {
-    this.http.delete(this.url + id).subscribe(
-      (val) => {
-        console.log("DELETE call successful value returned in body",
-          val);
-      },
-      response => {
-        console.log("DELETE call in error", response);
-      });
+    this.http.delete(this.url + id).subscribe();
   }
 }

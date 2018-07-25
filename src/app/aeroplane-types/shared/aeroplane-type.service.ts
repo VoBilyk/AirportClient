@@ -22,21 +22,15 @@ export class AeroplaneTypeService {
     return this.http.get<AeroplaneType>(this.url + id);
   }
 
-  create(aeroplaneTypes: AeroplaneType): Observable<AeroplaneType>{
-    return this.http.post<AeroplaneType>(this.url, aeroplaneTypes); 
+  create(aeroplaneTypes: AeroplaneType) {
+    this.http.post<AeroplaneType>(this.url, aeroplaneTypes).subscribe(); 
   }
 
-  update(id: string, aeroplaneTypes: AeroplaneType): Observable<AeroplaneType> {
-    return this.http.put<AeroplaneType>(this.url + id, aeroplaneTypes);
+  update(id: string, aeroplaneTypes: AeroplaneType) {
+    this.http.put<AeroplaneType>(this.url + id, aeroplaneTypes).subscribe();
   }
 
   delete(id: string) {
-    this.http.delete(this.url + id).subscribe(
-      () => {
-        console.log("DELETE call successful value returned in body");
-      },
-      response => {
-        console.log("DELETE call in error", response);
-      });
+    this.http.delete(this.url + id).subscribe()
   }
 }
