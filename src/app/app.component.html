@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">        
+      <ul class="navbar-nav">        
         <li><a class="nav-link" routerLink="/stewardesses" routerLinkActive="active">Stewardesses</a></li>
         <li><a class="nav-link" routerLink="/pilots" routerLinkActive="active">Pilots</a></li>
         <li><a class="nav-link" routerLink="/aeroplanes" routerLinkActive="active">Aeroplanes</a></li>
@@ -17,11 +17,34 @@
     </div>
   </nav>
 
+
 <div class="body-container">
   <router-outlet></router-outlet>
 </div>
 
 
 <footer class="footer">
-  <span class="text-muted">Created by Volodymyr Bilyk©</span>
+	<ul class="list-unstyled list-inline text-center">
+		<li class="list-inline-item">
+			<a class="btn-floating btn-tw mx-1">
+				<i class="fa fa-email"> </i>
+			</a>
+    </li>
+    <li class="list-inline-item">
+        <a class="btn-floating mx-1" href="https://github.com/VoBilyk">
+          <i class="fa fa-github"> </i>
+        </a>
+    </li>
+		<li class="list-inline-item">
+			<a class="btn-floating mx-1" href="https://www.linkedin.com/in/volodymyrbilyk/">
+				<i class="fa fa-linkedin"> </i>
+			</a>
+    </li>
+    <li class="list-inline-item">
+        <a class="btn-floating mx-1" href="https://www.facebook.com/bilyk96">
+          <i class="fa fa-facebook"> </i>
+        </a>
+      </li>
+	</ul>
+	<span>© 2018 Volodymyr Bilyk</span>
 </footer>

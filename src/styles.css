@@ -7,16 +7,16 @@ button {
 
 .body-container {
 	margin: 0 auto;
-	max-width: 1300px;
+	max-width: 1200px;
 	padding: 40px 15px;
-	min-height: 800px;
+	min-height: 700px;
 	text-align: center;
 }
 
 .footer {
 	width: 100%;
-	height: 60px;
-	line-height: 60px;
+	min-height: 120px;
+	padding: 20px;
 	background-color: #dddddd;
 	text-align: center;
 }
