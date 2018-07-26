@@ -13,11 +13,13 @@ import { CrewsModule } from './crews/crews.module';
 import { DeparturesModule } from './departures/departures.module';
 import { FlightsModule } from './flights/flights.module';
 import { TicketsModule } from './tickets/tickets.module';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

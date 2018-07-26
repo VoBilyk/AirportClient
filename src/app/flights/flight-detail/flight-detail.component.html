@@ -1,4 +1,6 @@
-<div class="table-detail-center">
+<div class="my-3 p-3 bg-white rounded shadow-lg table-detail-center">
+	<h5>Flight Information</h5>
+	<hr>
 	<div class="form-group">
 		<label>Id</label>
 		<div class="form-control">{{flight.id}}</div>
@@ -32,4 +34,6 @@
 		<button class="btn" (click)="update(flight.id)">Update</button>
 		<button class="btn" (click)="delete(flight.id)">Delete</button>
 	</div>
+
+	<div class="operation-result"></div>
 </div>

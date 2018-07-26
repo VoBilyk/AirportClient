@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { MainPageComponent } from './main-page/main-page.component'
 import { StewardessDetailComponent } from './stewardesses/stewardess-detail/stewardess-detail.component';
 import { StewardessListComponent } from './stewardesses/stewardess-list/stewardess-list.component';
 import { PilotListComponent } from './pilots/pilot-list/pilot-list.component';
@@ -19,6 +20,8 @@ import { TicketListComponent } from './tickets/ticket-list/ticket-list.component
 import { TicketDetailComponent } from './tickets/ticket-detail/ticket-detail.component';
 
 const routes: Routes = [
+  { path: '', component: MainPageComponent },
+
   { path: 'stewardesses', component: StewardessListComponent },
   { path: 'stewardesses/:id', component: StewardessDetailComponent },
   
