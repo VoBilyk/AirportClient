@@ -15,7 +15,7 @@ import { StewardessService } from '../shared/stewardess.service'
 export class StewardessListComponent implements OnInit {
 
   public stewardesses: Observable<Stewardess[]>;
-  public stewardess: Stewardess;
+  public stewardess: Stewardess = new Stewardess();
 
   constructor(private router: Router, private stewardessService: StewardessService) { }
 

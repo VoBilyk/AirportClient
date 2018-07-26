@@ -15,7 +15,7 @@ export class AeroplaneTypeListComponent implements OnInit {
 
 
   public aeroplaneTypes: Observable<AeroplaneType[]>;
-  public aeroplaneType: AeroplaneType;
+  public aeroplaneType: AeroplaneType = new AeroplaneType();
 
   constructor(private router: Router, private aeroplaneTypeService: AeroplaneTypeService) { }
 

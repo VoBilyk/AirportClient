@@ -15,7 +15,7 @@ import { PilotService } from '../shared/pilot.service';
 export class PilotListComponent implements OnInit {
 
   public pilots: Observable<Pilot[]>;
-  public pilot: Pilot;
+  public pilot: Pilot = new Pilot();
 
   constructor(private router: Router, private pilotService: PilotService) { }
 
@@ -24,6 +24,7 @@ export class PilotListComponent implements OnInit {
   }
 
   create() {
+    debugger;
     this.pilotService.create(this.pilot);
   }
 

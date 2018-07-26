@@ -1,12 +1,37 @@
 <div class="table-responsive">
-	<table class="table table-hover table-center">
+<table class="table table-add-item">
+	<thead class="thead-light">
+		<tr>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Experience(years)</th>
+			<th>Birth date</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><input class="form-control" [(ngModel)]="pilot.firstName"/></td>
+			<td><input class="form-control" [(ngModel)]="pilot.lastName"/></td>
+			<td><input type="number" class="form-control" [(ngModel)]="pilot.experience"/></td>
+			<td><input type="date" class="form-control" [(ngModel)]="pilot.birthDate"/></td>
+			<td >
+				<button class="btn btn-sm" (click)="create()">Create</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="table-responsive">
+	<table class="table table-hover table-center table-bordered">
 		<thead class="thead-dark">
 			<tr>
 				<th>№</th>
-				<th>FirstName</th>
-				<th>LastName</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
 				<th>Experience(years)</th>
-				<th>BithDate</th>
+				<th>Birth date</th>
 				<th></th>
 			</tr>
 		</thead>

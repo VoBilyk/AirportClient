@@ -1,5 +1,28 @@
 <div class="table-responsive">
-    <table class="table table-hover table-center">
+    <table class="table table-add-item">
+      <thead class="thead-light">
+        <tr>
+            <th>Model</th>
+            <th>Places</th>
+            <th>Carrying(kg)</th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" [(ngModel)]="aeroplaneType.model"/></td>
+          <td><input type="number" class="form-control" [(ngModel)]="aeroplaneType.places"/></td>
+          <td><input type="number" class="form-control" [(ngModel)]="aeroplaneType.carrying"/></td>
+          <td >
+            <button class="btn btn-sm" (click)="create()">Create</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-center table-bordered">
       <thead class="thead-dark">
         <tr>
           <th>№</th>
