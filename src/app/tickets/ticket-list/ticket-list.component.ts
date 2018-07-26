@@ -15,13 +15,13 @@ import { TicketService } from '../shared/ticket.service';
 })
 export class TicketListComponent implements OnInit {
 
-  public tickets: Observable<Ticket[]>;
+  public tickets: Ticket[] = [];
   public ticket: Ticket = new Ticket();
 
   constructor(private router: Router, private ticketService: TicketService) { }
 
   ngOnInit() {
-    this.tickets = this.ticketService.getAll();
+    this.ticketService.getAll().subscribe((data) => this.tickets = data);
   }
 
   create() {
@@ -30,6 +30,7 @@ export class TicketListComponent implements OnInit {
 
   delete(id: string) {
     this.ticketService.delete(id);
+    this.tickets = this.tickets.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

@@ -12,13 +12,13 @@ import { FlightService } from '../shared/flight.service';
 })
 export class FlightListComponent implements OnInit {
 
-  public flights: Observable<Flight[]>;
+  public flights: Flight[] = [];
   public flight: Flight = new Flight();
 
   constructor(private router: Router, private flightService: FlightService) { }
 
   ngOnInit() {
-    this.flights = this.flightService.getAll();
+    this.flightService.getAll().subscribe(data => this.flights = data);
   }
 
   create() {
@@ -27,6 +27,7 @@ export class FlightListComponent implements OnInit {
 
   delete(id: string) {
     this.flightService.delete(id);
+    this.flights = this.flights.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

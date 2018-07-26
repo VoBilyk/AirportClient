@@ -51,7 +51,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let flight of flights | async; let i = index">
+			<tr *ngFor="let flight of flights; let i = index">
 				<td>{{i+1}}</td>
 				<td>{{flight.name}}</td>
 				<td>{{flight.departurePoint}}</td>

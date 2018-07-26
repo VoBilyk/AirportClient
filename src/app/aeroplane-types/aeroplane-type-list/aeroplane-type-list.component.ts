@@ -14,13 +14,13 @@ import { AeroplaneTypeService } from '../shared/aeroplane-type.service';
 export class AeroplaneTypeListComponent implements OnInit {
 
 
-  public aeroplaneTypes: Observable<AeroplaneType[]>;
+  public aeroplaneTypes: AeroplaneType[];
   public aeroplaneType: AeroplaneType = new AeroplaneType();
 
   constructor(private router: Router, private aeroplaneTypeService: AeroplaneTypeService) { }
 
   ngOnInit() {
-    this.aeroplaneTypes = this.aeroplaneTypeService.getAll();
+    this.aeroplaneTypeService.getAll().subscribe((data) => this.aeroplaneTypes = data);
   }
 
   create() {
@@ -29,6 +29,7 @@ export class AeroplaneTypeListComponent implements OnInit {
 
   delete(id: string) {
     this.aeroplaneTypeService.delete(id);
+    this.aeroplaneTypes = this.aeroplaneTypes.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

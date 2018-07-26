@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { AeroplaneType } from '../shared/aeroplane-type.model';
 import { AeroplaneTypeService } from '../shared/aeroplane-type.service';
@@ -15,7 +16,7 @@ export class AeroplaneTypeDetailComponent implements OnInit {
   aeroplaneType: AeroplaneType = new AeroplaneType();
   id: string;
 
-  constructor(private aeroplaneTypeService: AeroplaneTypeService, private route: ActivatedRoute) { }
+  constructor(private aeroplaneTypeService: AeroplaneTypeService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => this.id = params['id']);
@@ -24,9 +25,11 @@ export class AeroplaneTypeDetailComponent implements OnInit {
 
   update(id: string){
     this.aeroplaneTypeService.update(id, this.aeroplaneType);
+    this.location.back();  
   }
 
   delete(id: string) {
     this.aeroplaneTypeService.delete(id);
+    this.location.back();
   }
 }

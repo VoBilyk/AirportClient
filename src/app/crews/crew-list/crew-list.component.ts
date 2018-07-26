@@ -12,13 +12,13 @@ import { CrewService } from '../shared/crew.service';
 })
 export class CrewListComponent implements OnInit {
 
-  public crews: Observable<Crew[]>;
+  public crews: Crew[] = [];
   public crew: Crew = new Crew();
 
   constructor(private router: Router, private crewService: CrewService) { }
 
   ngOnInit() {
-    this.crews = this.crewService.getAll();
+    this.crewService.getAll().subscribe((data) => this.crews = data);
   }
 
   create() {
@@ -27,6 +27,7 @@ export class CrewListComponent implements OnInit {
 
   delete(id: string) {
     this.crewService.delete(id);
+    this.crews = this.crews.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

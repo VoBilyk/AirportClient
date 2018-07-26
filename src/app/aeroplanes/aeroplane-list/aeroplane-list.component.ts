@@ -12,13 +12,13 @@ import { AeroplaneService } from '../shared/aeroplane.service';
 })
 export class AeroplaneListComponent implements OnInit {
 
-  public aeroplanes: Observable<Aeroplane[]>;
+  public aeroplanes: Aeroplane[];
   public aeroplane: Aeroplane = new Aeroplane();
 
   constructor(private router: Router, private aeroplaneService: AeroplaneService) { }
 
   ngOnInit() {
-    this.aeroplanes = this.aeroplaneService.getAll();
+    this.aeroplaneService.getAll().subscribe((data) => this.aeroplanes = data);
   }
 
   create() {
@@ -27,6 +27,7 @@ export class AeroplaneListComponent implements OnInit {
 
   delete(id: string) {
     this.aeroplaneService.delete(id);
+    this.aeroplanes = this.aeroplanes.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

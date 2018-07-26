@@ -46,7 +46,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let pilot of pilots | async; let i = index">
+			<tr *ngFor="let pilot of pilots; let i = index">
 				<td>{{i+1}}</td>
 				<td>{{pilot.firstName}}</td>
 				<td>{{pilot.lastName}}</td>

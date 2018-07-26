@@ -41,7 +41,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let aeroplane of aeroplanes | async; let i = index">
+			<tr *ngFor="let aeroplane of aeroplanes; let i = index">
 				<td>{{i+1}}</td>
 				<td>{{aeroplane.name}}</td>
 				<td>{{aeroplane.lifetime}}</td>

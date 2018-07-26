@@ -14,22 +14,22 @@ import { PilotService } from '../shared/pilot.service';
 })
 export class PilotListComponent implements OnInit {
 
-  public pilots: Observable<Pilot[]>;
+  public pilots: Pilot[];
   public pilot: Pilot = new Pilot();
 
   constructor(private router: Router, private pilotService: PilotService) { }
 
   ngOnInit() {
-    this.pilots = this.pilotService.getAll();
+    this.pilotService.getAll().subscribe((data) => this.pilots = data);
   }
 
   create() {
-    debugger;
     this.pilotService.create(this.pilot);
   }
 
   delete(id: string) {
     this.pilotService.delete(id);
+    this.pilots = this.pilots.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Crew } from '../shared/crew.model';
 import { CrewService } from '../shared/crew.service';
@@ -15,7 +16,10 @@ export class CrewDetailComponent implements OnInit {
   crew: Crew = new Crew();
   id: string;
 
-  constructor(private crewService: CrewService, private route: ActivatedRoute) { }
+  constructor(
+    private crewService: CrewService, 
+    private route: ActivatedRoute,  
+    private location: Location) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => this.id = params['id']);
@@ -24,11 +28,12 @@ export class CrewDetailComponent implements OnInit {
 
   update(id: string){
     this.crewService.update(id, this.crew);
+    this.location.back();
   }
 
   delete(id: string) {
     this.crewService.delete(id);
+    this.location.back();
   }
-
 
 }

@@ -14,13 +14,13 @@ import { StewardessService } from '../shared/stewardess.service'
 })
 export class StewardessListComponent implements OnInit {
 
-  public stewardesses: Observable<Stewardess[]>;
+  public stewardesses: Stewardess[] = [];
   public stewardess: Stewardess = new Stewardess();
 
   constructor(private router: Router, private stewardessService: StewardessService) { }
 
   ngOnInit() {
-    this.stewardesses = this.stewardessService.getAll();
+    this.stewardessService.getAll().subscribe((data) => this.stewardesses = data);
   }
 
   create() {
@@ -29,6 +29,7 @@ export class StewardessListComponent implements OnInit {
 
   delete(id: string) {
     this.stewardessService.delete(id);
+    this.stewardesses = this.stewardesses.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Pilot } from '../shared/pilot.model';
 import { PilotService } from '../shared/pilot.service';
@@ -15,7 +16,7 @@ export class PilotDetailComponent implements OnInit {
   pilot: Pilot = new Pilot();
   id: string;
 
-  constructor(private pilotService: PilotService, private route: ActivatedRoute) { }
+  constructor(private pilotService: PilotService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => this.id = params['id']);
@@ -24,9 +25,12 @@ export class PilotDetailComponent implements OnInit {
 
   update(id: string){
     this.pilotService.update(id, this.pilot);
+    this.location.back();
   }
 
   delete(id: string) {
     this.pilotService.delete(id);
+    this.location.back();
   }
+
 }

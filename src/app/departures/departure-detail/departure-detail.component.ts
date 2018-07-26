@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Departure } from '../shared/departure.model';
 import { DepartureService } from '../shared/departure.service';
@@ -14,7 +15,7 @@ export class DepartureDetailComponent implements OnInit {
   departure: Departure = new Departure();
   id: string;
 
-  constructor(private departureService: DepartureService, private route: ActivatedRoute) { }
+  constructor(private departureService: DepartureService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => this.id = params['id']);
@@ -23,10 +24,12 @@ export class DepartureDetailComponent implements OnInit {
 
   update(id: string){
     this.departureService.update(id, this.departure);
+    this.location.back();
   }
 
   delete(id: string) {
     this.departureService.delete(id);
+    this.location.back();
   }
 
 }

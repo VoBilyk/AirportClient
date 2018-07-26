@@ -30,15 +30,17 @@
 			<tr>
 				<th>№</th>
 				<th>PilotId</th>
-				<th>Stewardesses</th>
+				<th>StewardessesId</th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let crew of crews | async; let i = index">
+			<tr *ngFor="let crew of crews; let i = index">
 				<td>{{i+1}}</td>
 				<td>{{crew.pilotId}}</td>
-				<td>{{crew.stewardessesId}}</td>
+				<td>
+          <p *ngFor="let id of crew.stewardessesId">{{id}}</p>
+        </td>
 				<td class="btn-box">
 					<button class="btn btn-sm" (click)="goToDetail(crew.id)">Details</button>
 					<button class="btn btn-sm" (click)="delete(crew.id)">Delete</button>

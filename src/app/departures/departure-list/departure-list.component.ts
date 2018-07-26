@@ -13,13 +13,13 @@ import { DepartureService } from '../shared/departure.service';
 })
 export class DepartureListComponent implements OnInit {
 
-  public departures: Observable<Departure[]>;
+  public departures: Departure[] = [];
   public departure: Departure = new Departure();
 
   constructor(private router: Router, private departureService: DepartureService) { }
 
   ngOnInit() {
-    this.departures = this.departureService.getAll();
+    this.departureService.getAll().subscribe((data) => this.departures = data);
   }
 
   create() {
@@ -28,6 +28,7 @@ export class DepartureListComponent implements OnInit {
 
   delete(id: string) {
     this.departureService.delete(id);
+    this.departures = this.departures.filter(i => { return i.id !== id; });
   }
 
   goToDetail(id: string) {
