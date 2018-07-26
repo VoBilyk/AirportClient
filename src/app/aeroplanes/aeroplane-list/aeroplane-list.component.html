@@ -1,49 +1,56 @@
-<div class="table-responsive">
-    <table class="table table-add-item">
-      <thead class="thead-light">
-        <tr>
-          <th>Name</th>
-          <th>Lifetime</th>
-          <th>AeroplaneTypeId</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input class="form-control" [(ngModel)]="aeroplane.name"/></td>
-          <td><input class="form-control" [(ngModel)]="aeroplane.lifetime"/></td>
-          <td><input class="form-control" [(ngModel)]="aeroplane.aeroplaneTypeId"/></td>
-          <td >
-            <button class="btn btn-sm" (click)="create()">Create</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="table-wrap">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>Name</th>
+				<th>Lifetime</th>
+				<th>AeroplaneTypeId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="aeroplane.name" />
+				</td>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="aeroplane.lifetime" />
+				</td>
+				<td>
+					<input type="id" class="form-control" [(ngModel)]="aeroplane.aeroplaneTypeId" />
+				</td>
+				<td>
+					<button class="btn btn-sm" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
+<div class="clearfix"></div>
+
 
 <div class="table-wrap">
-    <table class="table table-hover table-bordered table-center">
-      <thead class="thead-dark">
-        <tr>
-          <th>№</th>
-          <th>Name</th>
-          <th>Lifetime</th>
-          <th>AeroplaneTypeId</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let aeroplane of aeroplanes | async; let i = index">
-          <td>{{i+1}}</td>
-          <td>{{aeroplane.name}}</td>    
-          <td>{{aeroplane.lifetime}}</td>
-          <td>{{aeroplane.aeroplaneTypeId}}</td>
-          <td class="btn-box">
-            <button class="btn btn-sm" (click)="goToDetail(aeroplane.id)">Details</button>
-            <button class="btn btn-sm" (click)="delete(aeroplane.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>Name</th>
+				<th>Lifetime</th>
+				<th>AeroplaneTypeId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let aeroplane of aeroplanes | async; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{aeroplane.name}}</td>
+				<td>{{aeroplane.lifetime}}</td>
+				<td>{{aeroplane.aeroplaneTypeId}}</td>
+				<td class="btn-box">
+					<button class="btn btn-sm" (click)="goToDetail(aeroplane.id)">Details</button>
+					<button class="btn btn-sm" (click)="delete(aeroplane.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

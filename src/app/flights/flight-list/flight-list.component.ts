@@ -13,7 +13,7 @@ import { FlightService } from '../shared/flight.service';
 export class FlightListComponent implements OnInit {
 
   public flights: Observable<Flight[]>;
-  public flight: Flight;
+  public flight: Flight = new Flight();
 
   constructor(private router: Router, private flightService: FlightService) { }
 

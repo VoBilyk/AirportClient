@@ -13,7 +13,7 @@ import { CrewService } from '../shared/crew.service';
 export class CrewListComponent implements OnInit {
 
   public crews: Observable<Crew[]>;
-  public crew: Crew;
+  public crew: Crew = new Crew();
 
   constructor(private router: Router, private crewService: CrewService) { }
 

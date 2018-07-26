@@ -23,17 +23,28 @@ button {
 
 .table-wrap{
 	display: inline-block;
-	margin: 0 auto;
+	margin: 30px auto 0px;
     max-width: 100%;
 	overflow-x: auto;
 	box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
 
 .table-add-item {
-	margin: 0 auto 20px;
-	max-width: 700px;
 	white-space: nowrap;
 	text-align: center;
+	margin: 0;
+}
+
+.table-add-item input[type="text"]{
+	min-width: 160px;
+}
+
+.table-add-item input[type="number"]{
+	min-width: 100px;
+}
+
+.table-add-item input[type="id"]{
+	min-width: 350px;
 }
 
 .table-center {
@@ -47,6 +58,7 @@ button {
 	margin: 0 auto;
 	max-width: 360px;
 	white-space: nowrap;
+	text-align: left;
 }
 
 .table-data-center {

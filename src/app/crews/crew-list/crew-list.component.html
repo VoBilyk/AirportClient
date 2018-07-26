@@ -1,24 +1,49 @@
 <div class="table-wrap">
-    <table class="table table-hover table-bordered table-center">
-      <thead class="thead-dark">
-        <tr>
-          <th>№</th>
-          <th>PilotId</th>
-          <th>Stewardesses</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let crew of crews | async; let i = index">
-          <td>{{i+1}}</td>
-          <td>{{crew.pilotId}}</td>    
-          <td>{{crew.stewardessesId}}</td>
-          <td class="btn-box">
-            <button class="btn btn-sm" (click)="goToDetail(crew.id)">Details</button>
-            <button class="btn btn-sm" (click)="delete(crew.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>PilotId</th>
+				<th>Stewardesses</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="id" class="form-control" [(ngModel)]="crew.pilotId" />
+				</td>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="crew.stewardessesId" />
+				</td>
+				<td>
+					<button class="btn btn-sm" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+<div class="table-wrap">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>PilotId</th>
+				<th>Stewardesses</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let crew of crews | async; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{crew.pilotId}}</td>
+				<td>{{crew.stewardessesId}}</td>
+				<td class="btn-box">
+					<button class="btn btn-sm" (click)="goToDetail(crew.id)">Details</button>
+					<button class="btn btn-sm" (click)="delete(crew.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
