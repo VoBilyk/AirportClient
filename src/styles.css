@@ -6,10 +6,27 @@ button {
 }
 
 .body-container {
-	max-width: 1200px;
 	margin: 0 auto;
+	max-width: 1300px;
 	padding: 40px 15px;
-	min-height: 400px;
+	min-height: 800px;
+	text-align: center;
+}
+
+.footer {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #dddddd;
+	text-align: center;
+}
+
+.table-wrap{
+	display: inline-block;
+	margin: 0 auto;
+    max-width: 100%;
+	overflow-x: auto;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
 
 .table-add-item {
@@ -20,7 +37,7 @@ button {
 }
 
 .table-center {
-	margin: 0 auto;
+	margin: 0 0;
 	max-width: 0%;
 	white-space: nowrap;
 	text-align: center;
@@ -28,25 +45,18 @@ button {
 
 .table-detail-center {
 	margin: 0 auto;
-	max-width: 350px;
+	max-width: 360px;
 	white-space: nowrap;
-}
-
-.btn-box {
-	display: grid;
-	justify-content: center;
-	grid-template-columns: 80px 80px;
-	grid-gap: 10px;
 }
 
 .table-data-center {
 	text-align: center;
 }
 
-.footer {
-	width: 100%;
-	height: 60px;
-	line-height: 60px;
-	background-color: #dddddd;
+.btn-box {
 	text-align: center;
+}
+
+.btn-box *:not(:last-child) {
+	margin-right: 10px;
 }
