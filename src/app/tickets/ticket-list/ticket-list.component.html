@@ -1,0 +1,43 @@
+<div class="table-wrap">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>Price</th>
+				<th>FlightId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="number" class="form-control" [(ngModel)]="ticket.price" /></td>
+				<td><input type="id" class="form-control" [(ngModel)]="ticket.flightId" /></td>
+				<td><button class="btn" (click)="create()">Create</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+<div class="table-wrap" *ngIf="tickets != null">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>Price</th>
+				<th>FlightId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let ticket of tickets; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{ticket.price}}</td>
+				<td>{{ticket.flightId}}</td>
+				<td class="btn-box">
+					<button class="btn" (click)="goToDetail(ticket.id)">Details</button>
+					<button class="btn" (click)="delete(ticket.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

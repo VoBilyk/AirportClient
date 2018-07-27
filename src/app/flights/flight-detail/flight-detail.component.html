@@ -1,0 +1,39 @@
+<div class="my-3 p-3 bg-white rounded shadow-lg table-detail-center">
+	<h5>Flight Information</h5>
+	<hr>
+	<div class="form-group">
+		<label>Id</label>
+		<div class="form-control">{{flight.id}}</div>
+	</div>
+	<div class="form-group">
+		<label>Name</label>
+		<input class="form-control" [(ngModel)]="flight.name" />
+	</div>
+	<div class="form-group">
+		<label>Departure point</label>
+		<input class="form-control" [(ngModel)]="flight.departurePoint" />
+	</div>
+	<div class="form-group">
+		<label>Destinition</label>
+		<input class="form-control" [(ngModel)]="flight.destinition" />
+	</div>
+	<div class="form-group">
+		<label>Arival time</label>
+		<input type="datetime" class="form-control" [(ngModel)]="flight.arrivalTime" />
+	</div>
+	<div class="form-group">
+		<label>Departure time</label>
+		<input type="datetime" class="form-control" [(ngModel)]="flight.departureTime" />
+	</div>
+	<div class="form-group">
+		<label>Tickets</label>
+		<input type="number" class="form-control" [(ngModel)]="flight.ticketsId.length" />
+	</div>
+
+	<div class="btn-box">
+		<button class="btn" (click)="update(flight.id)">Update</button>
+		<button class="btn" (click)="delete(flight.id)">Delete</button>
+	</div>
+
+	<div class="operation-result"></div>
+</div>

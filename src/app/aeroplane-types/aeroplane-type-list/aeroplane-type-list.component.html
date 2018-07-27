@@ -1,0 +1,55 @@
+<div class="table-wrap">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>Model</th>
+				<th>Places</th>
+				<th>Carrying(kg)</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="aeroplaneType.model" />
+				</td>
+				<td>
+					<input type="number" class="form-control" [(ngModel)]="aeroplaneType.places" />
+				</td>
+				<td>
+					<input type="number" class="form-control" [(ngModel)]="aeroplaneType.carrying" />
+				</td>
+				<td>
+					<button class="btn btn-sm" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+<div class="table-wrap" *ngIf="aeroplaneTypes != null">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>Model</th>
+				<th>Places</th>
+				<th>Carrying(kg)</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let aeroplaneType of aeroplaneTypes; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{aeroplaneType.model}}</td>
+				<td>{{aeroplaneType.places}}</td>
+				<td>{{aeroplaneType.carrying | number}}</td>
+				<td class="btn-box">
+					<button class="btn btn-sm" (click)="goToDetail(aeroplaneType.id)">Details</button>
+					<button class="btn btn-sm" (click)="delete(aeroplaneType.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

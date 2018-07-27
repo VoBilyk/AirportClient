@@ -1,0 +1,28 @@
+<div class="my-3 p-3 bg-white rounded shadow-lg table-detail-center">
+	<h5>Aeroplane Information</h5>
+	<hr>
+	<div class="form-group">
+		<label>Id</label>
+		<div class="form-control">
+			{{aeroplane.id}}
+		</div>
+	</div>
+	<div class="form-group">
+		<label>Name</label>
+		<input class="form-control" [(ngModel)]="aeroplane.name" />
+	</div>
+	<div class="form-group">
+		<label>Lifetime</label>
+		<input class="form-control" [(ngModel)]="aeroplane.lifetime" />
+	</div>
+	<div class="form-group">
+		<label>AeroplaneTypeId</label>
+		<input class="form-control" [(ngModel)]="aeroplane.aeroplaneTypeId" />
+	</div>
+
+	<div class="btn-box">
+		<button class="btn" (click)="update(aeroplane.id)">Update</button>
+		<button class="btn" (click)="delete(aeroplane.id)">Delete</button>
+	</div>
+	<div class="operation-result"></div>
+</div>

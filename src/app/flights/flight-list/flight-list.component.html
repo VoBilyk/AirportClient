@@ -1,0 +1,69 @@
+<div class="table-wrap">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>Name</th>
+				<th>DeparturePoint</th>
+				<th>Destinition</th>
+				<th>ArrivalTime</th>
+				<th>DepartureTime</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="flight.name" />
+				</td>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="flight.departurePoint" />
+				</td>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="flight.destinition" />
+				</td>
+				<td>
+					<input type="datetime-local" class="form-control" [(ngModel)]="flight.arrivalTime" />
+				</td>
+				<td>
+					<input type="datetime-local" class="form-control" [(ngModel)]="flight.departureTime" />
+				</td>
+				<td>
+					<button class="btn" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+<div class="table-wrap" *ngIf="flights != null">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>Name</th>
+				<th>DeparturePoint</th>
+				<th>Destinition</th>
+				<th>ArrivalTime</th>
+				<th>DepartureTime</th>
+				<th>Tickets</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let flight of flights; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{flight.name}}</td>
+				<td>{{flight.departurePoint}}</td>
+				<td>{{flight.destinition}}</td>
+				<td>{{flight.arrivalTime | date:'medium'}}</td>
+				<td>{{flight.departureTime | date:'medium'}}</td>
+				<td>{{flight.ticketsId.length}}</td>
+				<td class="btn-box">
+					<button class="btn" (click)="goToDetail(flight.id)">Details</button>
+					<button class="btn" (click)="delete(flight.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

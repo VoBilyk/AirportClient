@@ -1,0 +1,55 @@
+<div class="table-wrap">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>FirstName</th>
+				<th>LastName</th>
+				<th>Birth date</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="stewardess.firstName" />
+				</td>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="stewardess.lastName" />
+				</td>
+				<td>
+					<input type="date" class="form-control" [(ngModel)]="stewardess.birthDate" />
+				</td>
+				<td>
+					<button class="btn" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+<div class="table-wrap" *ngIf="stewardesses != null">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>FirstName</th>
+				<th>LastName</th>
+				<th>BithDate</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let stewardess of stewardesses; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{stewardess.firstName}}</td>
+				<td>{{stewardess.lastName}}</td>
+				<td>{{stewardess.birthDate | date:'mediumDate'}}</td>
+				<td class="btn-box">
+					<button class="btn" (click)="goToDetail(stewardess.id)">Details</button>
+					<button class="btn" (click)="delete(stewardess.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

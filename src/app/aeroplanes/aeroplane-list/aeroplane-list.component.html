@@ -1,0 +1,56 @@
+<div class="table-wrap">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>Name</th>
+				<th>Lifetime</th>
+				<th>AeroplaneTypeId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="aeroplane.name" />
+				</td>
+				<td>
+					<input type="text" class="form-control" [(ngModel)]="aeroplane.lifetime" />
+				</td>
+				<td>
+					<input type="id" class="form-control" [(ngModel)]="aeroplane.aeroplaneTypeId" />
+				</td>
+				<td>
+					<button class="btn" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+
+<div class="table-wrap" *ngIf="aeroplanes != null">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>Name</th>
+				<th>Lifetime(Hour)</th>
+				<th>AeroplaneTypeId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let aeroplane of aeroplanes; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{aeroplane.name}}</td>
+				<td>{{aeroplane.lifetime | number}}</td>
+				<td>{{aeroplane.aeroplaneTypeId}}</td>
+				<td class="btn-box">
+					<button class="btn" (click)="goToDetail(aeroplane.id)">Details</button>
+					<button class="btn" (click)="delete(aeroplane.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

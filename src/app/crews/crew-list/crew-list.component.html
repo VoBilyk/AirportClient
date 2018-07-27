@@ -1,0 +1,61 @@
+<div class="table-wrap" style="overflow:visible">
+	<table class="table table-add-item">
+		<thead class="thead-light">
+			<tr>
+				<th>PilotId</th>
+				<th>Stewardesses</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="id" class="form-control" [(ngModel)]="crew.pilotId" />
+				</td>
+				<td>
+					<div class="input-group">
+						<input type="text" class="form-control" aria-label="Text input with segmented dropdown button" [(ngModel)]="stewardessId">
+						<div class="input-group-append">
+							<button type="button" class="btn" (click)="pushStewardess()">Add</button>
+							<button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							</button>
+							<div class="dropdown-menu">
+								<div class="dropdown-item" *ngFor="let id of crew.stewardessesId">{{id}}</div>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td>
+					<button class="btn" (click)="create()">Create</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+
+<div class="table-wrap" *ngIf="crews != null">
+	<table class="table table-hover table-bordered table-center">
+		<thead class="thead-dark">
+			<tr>
+				<th>№</th>
+				<th>PilotId</th>
+				<th>StewardessesId</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let crew of crews; let i = index">
+				<td>{{i+1}}</td>
+				<td>{{crew.pilotId}}</td>
+				<td>
+					<p *ngFor="let id of crew.stewardessesId">{{id}}</p>
+				</td>
+				<td class="btn-box">
+					<button class="btn" (click)="goToDetail(crew.id)">Details</button>
+					<button class="btn" (click)="delete(crew.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

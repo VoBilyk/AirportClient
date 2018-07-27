@@ -1,0 +1,37 @@
+<div class="my-3 p-3 bg-white rounded shadow-lg table-detail-center">
+	<h5>Crew Information</h5>
+	<hr>
+	<div class="form-group">
+		<label>Id</label>
+		<div class="form-control">{{crew.id}}</div>
+	</div>
+	<div class="form-group">
+		<label>PilotId</label>
+		<input class="form-control" [(ngModel)]="crew.pilotId" />
+	</div>
+	<div class="form-group" *ngFor="let stewardess of crew.stewardessesId; let i = index">
+		<label>Stewardess {{i + 1}}</label>
+		<div class="input-group mb-3">
+			<input class="form-control" [(ngModel)]="crew.stewardessesId[i]" />
+			<div class="input-group-append">
+				<button class="btn" (click)="removeStewardess(i)">Remove</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>New stewardess</label>
+		<div class="input-group mb-3">
+			<input class="form-control" [(ngModel)]="stewardessId" />
+			<div class="input-group-append">
+				<button class="btn" (click)="addStewardess()">Add</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="btn-box">
+		<button class="btn" (click)="update(crew.id)">Update</button>
+		<button class="btn" (click)="delete(crew.id)">Delete</button>
+	</div>
+	<div class="operation-result"></div>
+</div>
