@@ -13,7 +13,7 @@ import { DepartureService } from '../shared/departure.service';
 })
 export class DepartureListComponent implements OnInit {
 
-  public departures: Departure[] = [];
+  public departures: Departure[];
   public departure: Departure = new Departure();
 
   constructor(private router: Router, private departureService: DepartureService) { }

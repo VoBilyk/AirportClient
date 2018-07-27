@@ -12,7 +12,7 @@ import { FlightService } from '../shared/flight.service';
 })
 export class FlightListComponent implements OnInit {
 
-  public flights: Flight[] = [];
+  public flights: Flight[];
   public flight: Flight = new Flight();
 
   constructor(private router: Router, private flightService: FlightService) { }

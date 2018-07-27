@@ -12,7 +12,7 @@ import { CrewService } from '../shared/crew.service';
 })
 export class CrewListComponent implements OnInit {
 
-  public crews: Crew[] = [];
+  public crews: Crew[];
   public crew: Crew = new Crew();
   public stewardessId = '';
 

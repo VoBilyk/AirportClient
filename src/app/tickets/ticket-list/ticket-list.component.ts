@@ -15,7 +15,7 @@ import { TicketService } from '../shared/ticket.service';
 })
 export class TicketListComponent implements OnInit {
 
-  public tickets: Ticket[] = [];
+  public tickets: Ticket[];
   public ticket: Ticket = new Ticket();
 
   constructor(private router: Router, private ticketService: TicketService) { }
