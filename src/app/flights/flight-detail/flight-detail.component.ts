@@ -18,6 +18,7 @@ export class FlightDetailComponent implements OnInit {
   constructor(private flightService: FlightService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    this.flight.ticketsId = [];
     this.route.params.subscribe(params => this.id = params['id']);
     this.flightService.get(this.id).subscribe(data => this.flight = data);
   }

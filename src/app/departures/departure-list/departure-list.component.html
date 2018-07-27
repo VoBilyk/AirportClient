@@ -20,7 +20,7 @@
 					<input type="id" class="form-control" [(ngModel)]="departure.airplaneId" />
 				</td>
 				<td>
-					<button class="btn btn-sm" (click)="create()">Create</button>
+					<button class="btn" (click)="create()">Create</button>
 				</td>
 			</tr>
 		</tbody>
@@ -46,8 +46,8 @@
 				<td>{{departure.crewId}}</td>
 				<td>{{departure.airplaneId}}</td>
 				<td class="btn-box">
-					<button class="btn btn-sm" (click)="goToDetail(departure.id)">Details</button>
-					<button class="btn btn-sm" (click)="delete(departure.id)">Delete</button>
+					<button class="btn" (click)="goToDetail(departure.id)">Details</button>
+					<button class="btn" (click)="delete(departure.id)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

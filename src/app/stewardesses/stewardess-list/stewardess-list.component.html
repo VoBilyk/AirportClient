@@ -20,7 +20,7 @@
 					<input type="date" class="form-control" [(ngModel)]="stewardess.birthDate" />
 				</td>
 				<td>
-					<button class="btn btn-sm" (click)="create()">Create</button>
+					<button class="btn" (click)="create()">Create</button>
 				</td>
 			</tr>
 		</tbody>
@@ -46,8 +46,8 @@
 				<td>{{stewardess.lastName}}</td>
 				<td>{{stewardess.birthDate | date:'mediumDate'}}</td>
 				<td class="btn-box">
-					<button class="btn btn-sm" (click)="goToDetail(stewardess.id)">Details</button>
-					<button class="btn btn-sm" (click)="delete(stewardess.id)">Delete</button>
+					<button class="btn" (click)="goToDetail(stewardess.id)">Details</button>
+					<button class="btn" (click)="delete(stewardess.id)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

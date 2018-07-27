@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -14,7 +14,9 @@ import { CrewService } from '../shared/crew.service';
 export class CrewDetailComponent implements OnInit {
 
   crew: Crew = new Crew();
+  stewardessId: string ='';
   id: string;
+  @Input('master') masterName: string;
 
   constructor(
     private crewService: CrewService, 
@@ -28,12 +30,20 @@ export class CrewDetailComponent implements OnInit {
 
   update(id: string){
     this.crewService.update(id, this.crew);
-    this.location.back();
   }
 
   delete(id: string) {
     this.crewService.delete(id);
     this.location.back();
+  }
+
+  addStewardess(){
+    this.crew.stewardessesId.push(this.stewardessId);
+    this.stewardessId = '';
+  }
+
+  removeStewardess(i: number){
+    this.crew.stewardessesId.splice(i, 1);
   }
 
 }

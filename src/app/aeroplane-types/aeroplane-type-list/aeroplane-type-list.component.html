@@ -44,7 +44,7 @@
 				<td>{{i+1}}</td>
 				<td>{{aeroplaneType.model}}</td>
 				<td>{{aeroplaneType.places}}</td>
-				<td>{{aeroplaneType.carrying}}</td>
+				<td>{{aeroplaneType.carrying | number}}</td>
 				<td class="btn-box">
 					<button class="btn btn-sm" (click)="goToDetail(aeroplaneType.id)">Details</button>
 					<button class="btn btn-sm" (click)="delete(aeroplaneType.id)">Delete</button>

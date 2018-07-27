@@ -56,9 +56,13 @@ button {
 
 .table-detail-center {
 	margin: 0 auto;
-	max-width: 360px;
+	max-width: 450px;
 	white-space: nowrap;
 	text-align: left;
+}
+
+.table-detail-center button{
+	width: 80px;
 }
 
 .table-data-center {

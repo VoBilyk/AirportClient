@@ -28,7 +28,7 @@
 					<input type="datetime-local" class="form-control" [(ngModel)]="flight.departureTime" />
 				</td>
 				<td>
-					<button class="btn btn-sm" (click)="create()">Create</button>
+					<button class="btn" (click)="create()">Create</button>
 				</td>
 			</tr>
 		</tbody>
@@ -60,8 +60,8 @@
 				<td>{{flight.departureTime | date:'medium'}}</td>
 				<td>{{flight.ticketsId.length}}</td>
 				<td class="btn-box">
-					<button class="btn btn-sm" (click)="goToDetail(flight.id)">Details</button>
-					<button class="btn btn-sm" (click)="delete(flight.id)">Delete</button>
+					<button class="btn" (click)="goToDetail(flight.id)">Details</button>
+					<button class="btn" (click)="delete(flight.id)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

@@ -11,7 +11,7 @@
 			<tr>
 				<td><input type="number" class="form-control" [(ngModel)]="ticket.price" /></td>
 				<td><input type="id" class="form-control" [(ngModel)]="ticket.flightId" /></td>
-				<td><button class="btn btn-sm" (click)="create()">Create</button></td>
+				<td><button class="btn" (click)="create()">Create</button></td>
 			</tr>
 		</tbody>
 	</table>
@@ -34,8 +34,8 @@
 				<td>{{ticket.price}}</td>
 				<td>{{ticket.flightId}}</td>
 				<td class="btn-box">
-					<button class="btn btn-sm" (click)="goToDetail(ticket.id)">Details</button>
-					<button class="btn btn-sm" (click)="delete(ticket.id)">Delete</button>
+					<button class="btn" (click)="goToDetail(ticket.id)">Details</button>
+					<button class="btn" (click)="delete(ticket.id)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

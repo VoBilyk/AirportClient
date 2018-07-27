@@ -20,7 +20,7 @@
 					<input type="id" class="form-control" [(ngModel)]="aeroplane.aeroplaneTypeId" />
 				</td>
 				<td>
-					<button class="btn btn-sm" (click)="create()">Create</button>
+					<button class="btn" (click)="create()">Create</button>
 				</td>
 			</tr>
 		</tbody>
@@ -35,7 +35,7 @@
 			<tr>
 				<th>№</th>
 				<th>Name</th>
-				<th>Lifetime</th>
+				<th>Lifetime(Hour)</th>
 				<th>AeroplaneTypeId</th>
 				<th></th>
 			</tr>
@@ -44,11 +44,11 @@
 			<tr *ngFor="let aeroplane of aeroplanes; let i = index">
 				<td>{{i+1}}</td>
 				<td>{{aeroplane.name}}</td>
-				<td>{{aeroplane.lifetime}}</td>
+				<td>{{aeroplane.lifetime | number}}</td>
 				<td>{{aeroplane.aeroplaneTypeId}}</td>
 				<td class="btn-box">
-					<button class="btn btn-sm" (click)="goToDetail(aeroplane.id)">Details</button>
-					<button class="btn btn-sm" (click)="delete(aeroplane.id)">Delete</button>
+					<button class="btn" (click)="goToDetail(aeroplane.id)">Details</button>
+					<button class="btn" (click)="delete(aeroplane.id)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

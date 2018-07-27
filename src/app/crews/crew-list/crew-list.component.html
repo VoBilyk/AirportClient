@@ -1,4 +1,4 @@
-<div class="table-wrap">
+<div class="table-wrap" style="overflow:visible">
 	<table class="table table-add-item">
 		<thead class="thead-light">
 			<tr>
@@ -13,10 +13,20 @@
 					<input type="id" class="form-control" [(ngModel)]="crew.pilotId" />
 				</td>
 				<td>
-					<input type="text" class="form-control" [(ngModel)]="crew.stewardessesId" />
+					<div class="input-group">
+						<input type="text" class="form-control" aria-label="Text input with segmented dropdown button" [(ngModel)]="stewardessId">
+						<div class="input-group-append">
+							<button type="button" class="btn" (click)="pushStewardess()">Add</button>
+							<button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							</button>
+							<div class="dropdown-menu">
+								<div class="dropdown-item" *ngFor="let id of crew.stewardessesId">{{id}}</div>
+							</div>
+						</div>
+					</div>
 				</td>
 				<td>
-					<button class="btn btn-sm" (click)="create()">Create</button>
+					<button class="btn" (click)="create()">Create</button>
 				</td>
 			</tr>
 		</tbody>
@@ -39,11 +49,11 @@
 				<td>{{i+1}}</td>
 				<td>{{crew.pilotId}}</td>
 				<td>
-          <p *ngFor="let id of crew.stewardessesId">{{id}}</p>
-        </td>
+					<p *ngFor="let id of crew.stewardessesId">{{id}}</p>
+				</td>
 				<td class="btn-box">
-					<button class="btn btn-sm" (click)="goToDetail(crew.id)">Details</button>
-					<button class="btn btn-sm" (click)="delete(crew.id)">Delete</button>
+					<button class="btn" (click)="goToDetail(crew.id)">Details</button>
+					<button class="btn" (click)="delete(crew.id)">Delete</button>
 				</td>
 			</tr>
 		</tbody>

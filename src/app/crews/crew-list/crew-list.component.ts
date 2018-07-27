@@ -14,10 +14,12 @@ export class CrewListComponent implements OnInit {
 
   public crews: Crew[] = [];
   public crew: Crew = new Crew();
+  public stewardessId = '';
 
   constructor(private router: Router, private crewService: CrewService) { }
 
   ngOnInit() {
+    this.crew.stewardessesId = [];
     this.crewService.getAll().subscribe((data) => this.crews = data);
   }
 
@@ -32,6 +34,11 @@ export class CrewListComponent implements OnInit {
 
   goToDetail(id: string) {
     this.router.navigate(['/crews', id]);
+  }
+
+  pushStewardess(){
+    this.crew.stewardessesId.push(this.stewardessId);
+    this.stewardessId = '';
   }
 
 }

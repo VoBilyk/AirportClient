@@ -9,10 +9,23 @@
 		<label>PilotId</label>
 		<input class="form-control" [(ngModel)]="crew.pilotId" />
 	</div>
+	<div class="form-group" *ngFor="let stewardess of crew.stewardessesId; let i = index">
+		<label>Stewardess {{i + 1}}</label>
+		<div class="input-group mb-3">
+			<input class="form-control" [(ngModel)]="crew.stewardessesId[i]" />
+			<div class="input-group-append">
+				<button class="btn" (click)="removeStewardess(i)">Remove</button>
+			</div>
+		</div>
+	</div>
+
 	<div class="form-group">
-		<label>Stewardesses</label>
-		<div class="form-control">
-			{{crew.stewardessesId}}
+		<label>New stewardess</label>
+		<div class="input-group mb-3">
+			<input class="form-control" [(ngModel)]="stewardessId" />
+			<div class="input-group-append">
+				<button class="btn" (click)="addStewardess()">Add</button>
+			</div>
 		</div>
 	</div>
 
